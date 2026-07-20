@@ -1,0 +1,16 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+SQLAlchemy==2.0.24
+asyncpg==0.28.0
+alembic==1.11.1
+pydantic==1.10.12
+python-jose==3.3.0
+passlib[bcrypt]==1.7.4
+python-chess==1.999
+aioredis==2.0.1
+databases==0.6.3
+psycopg2-binary==2.9.7
+redis==4.6.0
+httpx==0.24.1
+pytest==7.4.0
+pytest-asyncio==0.21.0

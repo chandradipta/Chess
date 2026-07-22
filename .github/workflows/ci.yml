@@ -15,6 +15,7 @@ jobs:
       postgres:
         image: postgres:15
         env:
+          DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/chess
           POSTGRES_DB: chess
           POSTGRES_USER: chess
           POSTGRES_PASSWORD: chesspass

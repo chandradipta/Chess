@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql+asyncpg://chess:chesspass@localhost:5432/chess
     services:
       postgres:
         image: postgres:15

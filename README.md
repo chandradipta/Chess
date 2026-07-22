@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ♟️ AI Chess Platform
 
 An AI-powered full-stack Chess application built using **React**, **TypeScript**, and **FastAPI**. The platform provides an interactive chess-playing experience with AI-assisted gameplay, multiple difficulty levels, and real-time game management powered by the Stockfish chess engine.
@@ -239,3 +240,6 @@ This project is developed for educational and learning purposes.
 **Chandradipta**
 
 GitHub: https://github.com/chandradipta
+=======
+
+>>>>>>> ef03713ef68784f8aa84ac6cd844ad75fdbadc8b

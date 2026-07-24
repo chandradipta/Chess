@@ -22,7 +22,7 @@ class GameOut(BaseModel):
     black_id: int = None
 
 
-@router.post("/", summary="Create a game", response_model=GameOut)
+@router.post("", summary="Create a game", response_model=GameOut)
 async def create_game(
     payload: GameCreate,
     current_user=Depends(get_current_user_optional),

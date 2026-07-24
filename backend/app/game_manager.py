@@ -4,10 +4,10 @@ import json
 from typing import Dict, Set, Optional
 import chess
 from fastapi import WebSocket
-from stockfish_utils import get_bestmoves_for_difficulty
+from .stockfish_utils import get_bestmoves_for_difficulty
+from .db import AsyncSessionLocal
+from .models import Move, Game
 import os
-from db import AsyncSessionLocal
-from models import Move, Game
 from sqlalchemy import select
 import aioredis
 

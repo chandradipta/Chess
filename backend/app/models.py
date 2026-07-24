@@ -1,10 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, Enum
 from sqlalchemy.sql import func
-from app.db import Base
-from app.models import User
-from app.schemas import Game
-from app.game_manager import GameManager
-from app.stockfish_utils import StockfishEngine
+from .db import Base
 import enum
 
 class GameStatus(str, enum.Enum):

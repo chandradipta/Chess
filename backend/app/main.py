@@ -1,7 +1,7 @@
 import os
 import asyncio
 
-import aioredis
+import redis.asyncio as redis
 from fastapi import FastAPI, WebSocket, Query
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -27,7 +27,7 @@ REDIS_URL = os.environ.get("REDIS_URL", "redis://redis:6379")
 
 @app.on_event("startup")
 async def startup():
-    app.state.redis = await aioredis.from_url(
+    app.state.redis = await redis.from_url(
         REDIS_URL,
         decode_responses=True,
     )

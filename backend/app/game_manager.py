@@ -9,7 +9,7 @@ from .db import AsyncSessionLocal
 from .models import Move, Game
 import os
 from sqlalchemy import select
-import aioredis
+import redis.asyncio as redis
 
 SUGGESTION_TIMEOUT = int(os.environ.get("SUGGESTION_TIMEOUT", "90"))
 MULTIPV = 3
@@ -85,14 +85,14 @@ class GameManager:
         self.redis = None
         self._ai_result_task = None
 
-    async def set_redis(self, redis_client: aioredis.Redis):
+    async def set_redis(self, redis_client: redis.Redis):
         self.redis = redis_client
 
-    async def start_ai_result_listener(self, redis_client: aioredis.Redis):
+    async def start_ai_result_listener(self, redis_client: redis.Redis):
         await self.set_redis(redis_client)
         self._ai_result_task = asyncio.create_task(self._ai_result_loop(redis_client))
 
-    async def _ai_result_loop(self, redis_client: aioredis.Redis):
+    async def _ai_result_loop(self, redis_client: redis.Redis):
         pubsub = redis_client.pubsub()
         await pubsub.subscribe(REDIS_AI_RESULTS_CHANNEL)
         async for message in pubsub.listen():

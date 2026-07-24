@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ♟️ AI Chess Platform
 
 An AI-powered full-stack Chess application built using **React**, **TypeScript**, and **FastAPI**. The platform provides an interactive chess-playing experience with AI-assisted gameplay, multiple difficulty levels, and real-time game management powered by the Stockfish chess engine.
